@@ -1,7 +1,7 @@
 # Site settings
-title: 排球混子 Blog
+title: 
 SEOTitle: 排球混子的博客 | 排球混子 Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-desk.png
 email: sunliren1997@gmail.com
 description: "Every failure is leading towards success."
 keyword: "排球混子的博客, sunliren, 孙礼仁, Ruby, Python"
@@ -11,7 +11,7 @@ github_repo: "https://github.com/liren-sun/liren-sun.github.io.git" # you code r
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "道阻且长行则将至"
+sidebar-about-description: ""
 sidebar-avatar: /img/about-me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
