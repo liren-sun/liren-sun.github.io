@@ -1,0 +1,50 @@
+---
+layout:     post
+title:      Redis相关
+date:       2024-01-09
+author:     排球混子
+header-img: img/post-bg-debug.png
+catalog: true
+tags:
+    - Redis
+---
+
+# Redis相关
+##  通用命令和数据结构
+### 通用命令
+- Keys
+  - O(n)不建议在线上使用
+- dbsize
+  - O(1) 可以在线上使用，其内置了计数器
+- exists key
+  - O(1) 存在返回1，不存在返回0，一般来说，随便使用
+- expire key seconds
+  - O(1)
+  - `expire key seconds` key在seconds后过期
+  - `ttl key` 查看key的剩余过期时间
+  - `persist key` 去掉key的过期时间
+- del key
+  - O(1)
+- type key
+  - O(1) 查看key的类型
+
+### 数据结构
+
+## 单线程为什么这么快
+### 介绍
+- 纯内存
+- 非阻塞io
+- 避免线程切换和竞态消耗
+  - 线程切换开销? 
+    - cpu寄存器的保存与恢复
+    - 栈内存的切换
+    - 缓存失效
+  - 竞态消耗
+    - 多线程试图同时修改或读取共享数据
+### 注意事项
+- 一次只允许一条命令
+- 拒绝长(慢)命令
+```shell
+keys, flushall, flushdb, slow lua script, 
+mutil/exec, operate big value(collection)
+```
